@@ -1,5 +1,3 @@
-"use client"
-
 import type React from "react"
 import { useState, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
