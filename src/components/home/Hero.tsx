@@ -424,27 +424,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Navigation Dots */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex flex-wrap justify-center gap-3 max-w-2xl px-4 bg-white/20 backdrop-blur-md rounded-full py-3 border border-white/30">
-          {heroProducts.map((product, index) => (
-            <motion.button
-              key={index}
-              onClick={() => handleDotClick(index)}
-              whileHover={{ scale: 1.2 }}
-              whileTap={{ scale: 0.9 }}
-              className={`rounded-full transition-all duration-300 ${
-                index === currentIndex
-                  ? "w-8 h-4 bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 shadow-lg"
-                  : "w-4 h-4 bg-white/50 hover:bg-white/70"
-              }`}
-              aria-label={`View ${product.name} ${product.tagline} ice cream`}
-              aria-current={index === currentIndex ? "true" : "false"}
-            />
-          ))}
-        </div>
-      </div>
-
       {/* Progress Bar */}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20">
         <motion.div
