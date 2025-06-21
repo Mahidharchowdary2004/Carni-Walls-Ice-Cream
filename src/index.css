@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-body text-gray-800 bg-white;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold leading-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-display font-semibold rounded-full transition-all duration-300 transform;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-400 text-white hover:bg-primary-500 hover:scale-105 shadow-md hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-300 text-gray-800 hover:bg-secondary-400 hover:scale-105 shadow-md hover:shadow-lg;
+  }
+
+  .btn-accent {
+    @apply bg-accent-300 text-gray-800 hover:bg-accent-400 hover:scale-105 shadow-md hover:shadow-lg;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl;
+  }
+
+  .section {
+    @apply py-12 md:py-20;
+  }
+
+  .underline-custom {
+    @apply relative inline-block;
+  }
+  
+  .underline-custom::after {
+    @apply content-[''] absolute w-full h-2 bg-accent-300 bottom-0 left-0 -z-10 transform transition-all duration-300;
+  }
+  
+  .underline-custom:hover::after {
+    @apply h-3 bg-primary-400;
+  }
+}
+
+/* Animate on scroll utility classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-in-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
