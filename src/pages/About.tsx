@@ -72,6 +72,20 @@ const About: React.FC = () => {
                       className="w-full h-full object-cover"
                     />
                   </div>
+                   <div className="rounded-xl overflow-hidden shadow-md h-40 md:h-56">
+                    <img 
+                      src="/1.jpg"
+                      alt="Scoops" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="rounded-xl overflow-hidden shadow-md h-40 md:h-56">
+                    <img 
+                      src="/3.png" 
+                      alt="Ice cream ingredients" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 </div>
                 <div className="space-y-4 mt-12">
                   <div className="rounded-xl overflow-hidden shadow-md h-64 md:h-80">
@@ -85,6 +99,13 @@ const About: React.FC = () => {
                     <img 
                       src="https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg" 
                       alt="Ice cream ingredients" 
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="rounded-xl overflow-hidden shadow-md h-64 md:h-80">
+                    <img 
+                      src="/2.jpg" 
+                      alt="Scooping ice cream" 
                       className="w-full h-full object-cover"
                     />
                   </div>

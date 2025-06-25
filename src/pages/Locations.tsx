@@ -24,7 +24,7 @@ const location = {
   mapEmbed:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.3889314104144!2d79.98635697487111!3d14.519731885957112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4c8d6cd281ee91%3A0xfbcf32f767f4f00e!2sCarni%20walls%20ice%20creams!5e0!3m2!1sen!2sin!4v1745640515646!5m2!1sen!2sin",
   image:
-    "https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "/shop.jpg",
   specialties: ["All Signature Flavors", "Ice Cream Cakes", "Sundae Bar", "Artisanal Coffee", "Baked Goods"],
   about:
     "Our flagship store offers the complete Sundae Dreams experience with our full range of handcrafted ice creams, specialty sundaes, and custom ice cream cakes. The spacious seating area and outdoor patio make it perfect for gatherings with family and friends.",
@@ -32,9 +32,10 @@ const location = {
   accessibility: "Accessible entrance and restrooms",
   gallery: [
     "/shop.jpg",
-    "https://images.pexels.com/photos/1682462/pexels-photo-1682462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/1756665/pexels-photo-1756665.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    "https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "1.jpg",
+    "2.jpg",
+    "3.png"
+    
   ],
   socialMedia: {
     instagram: "https://instagram.com/sundaedreams",
