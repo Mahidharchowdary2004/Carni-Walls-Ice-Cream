@@ -29,40 +29,41 @@ const ContactForm: React.FC = () => {
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setStatus({ type: null, message: "" })
-    setStatus({ type: "info", message: "Sending your message..." })
+    e.preventDefault();
+    setStatus({ type: null, message: "" });
+    setStatus({ type: "info", message: "Sending your message..." });
+
+    // Debug: log what you're sending
+    const payload = {
+      name: formData.name,
+      time: new Date().toLocaleString(),
+      message: formData.message,
+    };
+    console.log(payload);
+
+    // Ensure all fields are filled
+    if (!payload.name || !payload.time || !payload.message) {
+      setStatus({ type: "error", message: "Please fill in all fields." });
+      return;
+    }
 
     try {
-      const emailHtml = ReactDOMServer.renderToStaticMarkup(
-        <EmailTemplate
-          name={formData.name}
-          time={new Date().toLocaleString()}
-          message={formData.message}
-        />
-      );
-
       await emailjs.send(
-        'service_qswklyf',
-        'template_ed2w5wk',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          html_message: emailHtml,
-        },
-        'zjnSOmco7GwCAasKq'
-      )
+        'service_qswklyf', // your EmailJS service ID
+        'template_upg1up2', // your EmailJS template ID (updated)
+        payload,
+        'zjnSOmco7GwCAasKq' // your EmailJS public key
+      );
       setStatus({
         type: "success",
         message: "Message sent successfully! We will get back to you soon.",
-      })
-      setFormData({ name: "", email: "", subject: "", message: "" })
+      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
       setStatus({
         type: "error",
         message: "Failed to send message. Please try again later.",
-      })
+      });
     }
   }
 
