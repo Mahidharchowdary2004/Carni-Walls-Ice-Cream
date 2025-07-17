@@ -36,8 +36,10 @@ const ContactForm: React.FC = () => {
     // Debug: log what you're sending
     const payload = {
       name: formData.name,
-      time: new Date().toLocaleString(),
+      email: formData.email,
+      subject: formData.subject,
       message: formData.message,
+      time: new Date().toLocaleString(),
     };
     console.log(payload);
 
