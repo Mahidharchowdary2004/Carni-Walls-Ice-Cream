@@ -1,7 +1,7 @@
 import type React from "react"
 import { useState, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Star, Heart, Eye } from "lucide-react"
+import { Star, Heart, Clock, Award, Sparkles } from "lucide-react"
 
 // Food items data
 const allFlavors = [
@@ -9,26 +9,138 @@ const allFlavors = [
   {
     id: 1,
     name: "Classic Vanilla",
-    description: "Creamy vanilla ice cream with a rich, smooth texture that melts perfectly on your tongue.",
-    imageUrl: "https://images.pexels.com/photos/1352281/pexels-photo-1352281.jpeg",
-    tags: ["Ice Cream", "Dessert", "Classic"],
+    description: "A timeless favorite — smooth and creamy vanilla ice cream made with real vanilla beans.",
+    imageUrl: "/vennila ice.png",
+    tags: ["Ice Cream", "Vanilla", "Classic", "Sweet"],
     featured: true,
     category: "Ice Cream",
-    price: "₹416",
+    price: "₹200",
+    rating: 4.8,
+    prepTime: "5 min",
   },
   {
     id: 2,
     name: "Chocolate Delight",
-    description: "Rich chocolate ice cream with chocolate chips and a hint of cocoa magic.",
-    imageUrl: "https://images.pexels.com/photos/1352288/pexels-photo-1352288.jpeg",
-    tags: ["Ice Cream", "Dessert", "Chocolate"],
+    description: "Decadent chocolate ice cream loaded with rich chocolate chips and a deep cocoa flavor.",
+    imageUrl: "/Chacolate Delight.png",
+    tags: ["Ice Cream", "Chocolate", "Rich", "Dessert"],
     featured: false,
     category: "Ice Cream",
-    price: "₹457",
+    price: "₹300",
+    rating: 4.9,
+    prepTime: "5 min",
+  },
+  {
+    id: 3,
+    name: "Pistachio Bliss",
+    description: "Nutty and creamy pistachio ice cream with crunchy pistachio bits for extra delight.",
+    imageUrl: "/Pista.png",
+    tags: ["Ice Cream", "Pistachio", "Nutty", "Premium"],
+    featured: true,
+    category: "Ice Cream",
+    price: "₹200",
+    rating: 4.7,
+    prepTime: "5 min",
+  },
+  {
+    id: 4,
+    name: "Strawberry Swirl",
+    description: "Fresh strawberry ice cream swirled with juicy strawberry chunks and a fruity aroma.",
+    imageUrl: "/Starayberry.png",
+    tags: ["Ice Cream", "Strawberry", "Fruity", "Dessert"],
+    featured: true,
+    category: "Ice Cream",
+    price: "₹200",
+    rating: 4.6,
+    prepTime: "5 min",
+  },
+  {
+    id: 5,
+    name: "Muskmelon Magic",
+    description: "Refreshing muskmelon-flavored ice cream that brings a cool tropical twist to your day.",
+    imageUrl: "/Muskmelon.png",
+    tags: ["Ice Cream", "Melon", "Fruity", "Summer Treat"],
+    featured: true,
+    category: "Ice Cream",
+    price: "₹300",
+    rating: 4.5,
+    prepTime: "5 min",
+  },
+  {
+    id: 6,
+    name: "Butterscotch Crunch",
+    description: "Golden butterscotch ice cream with crunchy caramel bits and buttery sweetness.",
+    imageUrl: "/butterscotch.png",
+    tags: ["Ice Cream", "Butterscotch", "Caramel", "Crunchy"],
+    featured: true,
+    category: "Ice Cream",
+    price: "₹300",
+    rating: 4.8,
+    prepTime: "5 min",
+  },
+  {
+    id: 7,
+    name: "Caramel Craze",
+    description: "Luscious caramel ice cream swirled with thick ribbons of golden caramel sauce.",
+    imageUrl: "/Caramel.png",
+    tags: ["Ice Cream", "Caramel", "Sweet", "Gourmet"],
+    featured: true,
+    category: "Ice Cream",
+    price: "₹350",
+    rating: 4.9,
+    prepTime: "5 min",
+  },
+  {
+    id: 8,
+    name: "Spicy Guava Burst",
+    description: "A bold mix of tropical guava flavor with a hint of spice — a unique twist in every scoop.",
+    imageUrl: "/Spicy Guva.png",
+    tags: ["Ice Cream", "Guava", "Spicy", "Tropical", "Fusion"],
+    featured: true,
+    category: "Ice Cream",
+    price: "₹350",
+    rating: 4.7,
+    prepTime: "5 min",
+  },
+  {
+    id: 9,
+    name: "Revelvet",
+    description: "Red velvet ice cream with a creamy swirl and a hint of cocoa, topped with velvet cake crumbs.",
+    imageUrl: "/Revelvet.png",
+    tags: ["Ice Cream", "Red Velvet", "Cake", "Dessert"],
+    featured: true,
+    category: "Ice Cream",
+    price: "₹350",
+    rating: 4.8,
+    prepTime: "5 min",
+  },
+  {
+    id: 10,
+    name: "Kaju Kishmish",
+    description: "Rich ice cream loaded with cashews and raisins for a royal treat.",
+    imageUrl: "/kaju kissmis.png",
+    tags: ["Ice Cream", "Cashew", "Raisin", "Royal"],
+    featured: true,
+    category: "Ice Cream",
+    price: "₹350",
+    rating: 4.6,
+    prepTime: "5 min",
+  },
+  {
+    id: 11,
+    name: "Chocolate Fudge",
+    description: "Intense chocolate fudge ice cream with gooey fudge swirls and chocolate chunks.",
+    imageUrl: "/Chacolate fudge.png",
+    tags: ["Ice Cream", "Chocolate", "Fudge", "Rich"],
+    featured: true,
+    category: "Ice Cream",
+    price: "₹350",
+    rating: 4.9,
+    prepTime: "5 min",
   },
   // Burgers
   {
-    id: 3,
+    id: 12,
     name: "Classic Cheeseburger",
     description: "Juicy beef patty with melted cheese and fresh vegetables on a toasted bun.",
     imageUrl: "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg",
@@ -36,9 +148,11 @@ const allFlavors = [
     featured: true,
     category: "Burgers",
     price: "₹749",
+    rating: 4.7,
+    prepTime: "15 min",
   },
   {
-    id: 4,
+    id: 13,
     name: "Double Bacon Burger",
     description: "Double beef patty with crispy bacon and our special house sauce.",
     imageUrl: "https://images.pexels.com/photos/1633578/pexels-photo-1633578.jpeg",
@@ -46,10 +160,12 @@ const allFlavors = [
     featured: false,
     category: "Burgers",
     price: "₹1,082",
+    rating: 4.9,
+    prepTime: "18 min",
   },
   // Pizzas
   {
-    id: 5,
+    id: 14,
     name: "Margherita Pizza",
     description: "Classic pizza with tomato sauce, fresh mozzarella, and aromatic basil leaves.",
     imageUrl: "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg",
@@ -57,9 +173,11 @@ const allFlavors = [
     featured: true,
     category: "Pizzas",
     price: "₹1,249",
+    rating: 4.8,
+    prepTime: "20 min",
   },
   {
-    id: 6,
+    id: 15,
     name: "Pepperoni Feast",
     description: "Loaded with premium pepperoni and extra melted cheese on crispy crust.",
     imageUrl: "https://images.pexels.com/photos/803290/pexels-photo-803290.jpeg",
@@ -67,10 +185,12 @@ const allFlavors = [
     featured: false,
     category: "Pizzas",
     price: "₹1,415",
+    rating: 4.6,
+    prepTime: "22 min",
   },
   // Chicken
   {
-    id: 7,
+    id: 16,
     name: "Crispy Fried Chicken",
     description: "Golden crispy chicken with our secret blend of herbs and spices.",
     imageUrl: "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg",
@@ -78,9 +198,11 @@ const allFlavors = [
     featured: true,
     category: "Chicken",
     price: "₹832",
+    rating: 4.7,
+    prepTime: "25 min",
   },
   {
-    id: 8,
+    id: 17,
     name: "Grilled Chicken Wings",
     description: "Spicy grilled chicken wings glazed with tangy BBQ sauce.",
     imageUrl: "https://images.pexels.com/photos/2338408/pexels-photo-2338408.jpeg",
@@ -88,10 +210,12 @@ const allFlavors = [
     featured: false,
     category: "Chicken",
     price: "₹999",
+    rating: 4.8,
+    prepTime: "20 min",
   },
   // Milkshakes
   {
-    id: 9,
+    id: 18,
     name: "Chocolate Milkshake",
     description: "Rich and creamy chocolate milkshake topped with whipped cream and cherry.",
     imageUrl: "https://images.pexels.com/photos/1352288/pexels-photo-1352288.jpeg",
@@ -99,9 +223,11 @@ const allFlavors = [
     featured: true,
     category: "Milkshakes",
     price: "₹582",
+    rating: 4.6,
+    prepTime: "8 min",
   },
   {
-    id: 10,
+    id: 19,
     name: "Strawberry Milkshake",
     description: "Sweet strawberry milkshake made with fresh berries and vanilla ice cream.",
     imageUrl: "https://images.pexels.com/photos/1352281/pexels-photo-1352281.jpeg",
@@ -109,49 +235,66 @@ const allFlavors = [
     featured: false,
     category: "Milkshakes",
     price: "₹582",
+    rating: 4.5,
+    prepTime: "8 min",
   },
 ]
 
-// Category color themes
+// Enhanced category color themes
 const categoryColors = {
   "Ice Cream": {
-    bg: "from-pink-100 to-rose-100",
-    border: "border-pink-200",
-    text: "text-pink-800",
-    accent: "bg-pink-200",
-    button: "from-pink-400 to-rose-400 hover:from-pink-500 hover:to-rose-500",
+    bg: "from-pink-50 via-rose-50 to-pink-100",
+    cardBg: "from-pink-50/80 to-rose-100/80",
+    border: "border-pink-200/50",
+    text: "text-pink-900",
+    accent: "bg-gradient-to-r from-pink-400 to-rose-400",
+    button: "from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600",
+    shadow: "shadow-pink-200/50",
+    glow: "shadow-pink-400/20",
   },
   Burgers: {
-    bg: "from-orange-100 to-yellow-100",
-    border: "border-orange-200",
-    text: "text-orange-800",
-    accent: "bg-orange-200",
-    button: "from-orange-400 to-yellow-400 hover:from-orange-500 hover:to-yellow-500",
+    bg: "from-orange-50 via-amber-50 to-yellow-50",
+    cardBg: "from-orange-50/80 to-yellow-100/80",
+    border: "border-orange-200/50",
+    text: "text-orange-900",
+    accent: "bg-gradient-to-r from-orange-400 to-yellow-400",
+    button: "from-orange-500 to-yellow-500 hover:from-orange-600 hover:to-yellow-600",
+    shadow: "shadow-orange-200/50",
+    glow: "shadow-orange-400/20",
   },
   Pizzas: {
-    bg: "from-red-100 to-pink-100",
-    border: "border-red-200",
-    text: "text-red-800",
-    accent: "bg-red-200",
-    button: "from-red-400 to-pink-400 hover:from-red-500 hover:to-pink-500",
+    bg: "from-red-50 via-rose-50 to-pink-50",
+    cardBg: "from-red-50/80 to-pink-100/80",
+    border: "border-red-200/50",
+    text: "text-red-900",
+    accent: "bg-gradient-to-r from-red-400 to-pink-400",
+    button: "from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600",
+    shadow: "shadow-red-200/50",
+    glow: "shadow-red-400/20",
   },
   Chicken: {
-    bg: "from-amber-100 to-orange-100",
-    border: "border-amber-200",
-    text: "text-amber-800",
-    accent: "bg-amber-200",
-    button: "from-amber-400 to-orange-400 hover:from-amber-500 hover:to-orange-500",
+    bg: "from-amber-50 via-orange-50 to-yellow-50",
+    cardBg: "from-amber-50/80 to-orange-100/80",
+    border: "border-amber-200/50",
+    text: "text-amber-900",
+    accent: "bg-gradient-to-r from-amber-400 to-orange-400",
+    button: "from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600",
+    shadow: "shadow-amber-200/50",
+    glow: "shadow-amber-400/20",
   },
   Milkshakes: {
-    bg: "from-purple-100 to-pink-100",
-    border: "border-purple-200",
-    text: "text-purple-800",
-    accent: "bg-purple-200",
-    button: "from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500",
+    bg: "from-purple-50 via-pink-50 to-rose-50",
+    cardBg: "from-purple-50/80 to-pink-100/80",
+    border: "border-purple-200/50",
+    text: "text-purple-900",
+    accent: "bg-gradient-to-r from-purple-400 to-pink-400",
+    button: "from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600",
+    shadow: "shadow-purple-200/50",
+    glow: "shadow-purple-400/20",
   },
 }
 
-// FlavorCard component
+// Enhanced FlavorCard component
 const FlavorCard = ({
   name,
   description,
@@ -160,6 +303,8 @@ const FlavorCard = ({
   featured,
   category,
   price,
+  rating,
+  prepTime,
 }: {
   name: string
   description: string
@@ -168,82 +313,123 @@ const FlavorCard = ({
   featured: boolean
   category: string
   price: string
+  rating: number
+  prepTime: string
 }) => {
   const colors = categoryColors[category as keyof typeof categoryColors] || categoryColors["Ice Cream"]
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      whileHover={{ y: -5 }}
-      className={`relative group overflow-hidden rounded-3xl shadow-xl bg-gradient-to-br ${colors.bg} backdrop-blur-sm border-2 ${colors.border} transition-all duration-300`}
+      initial={{ opacity: 0, y: 30, scale: 0.9 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      whileHover={{
+        y: -8,
+        scale: 1.02,
+        transition: { type: "spring", stiffness: 300, damping: 20 },
+      }}
+      className={`relative group overflow-hidden rounded-3xl bg-gradient-to-br ${colors.cardBg} backdrop-blur-xl border-2 ${colors.border} transition-all duration-500 ${colors.shadow} hover:${colors.glow} hover:shadow-2xl`}
     >
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <img
-          src={imageUrl || "/placeholder.svg"}
-          alt={name}
-          className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      {/* Decorative gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
+      {/* Image section */}
+      <div className="relative aspect-[4/3] overflow-hidden">
+        <motion.img
+          src={imageUrl}
+          alt={name}
+          className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+          whileHover={{ scale: 1.1 }}
+        />
+
+        {/* Image overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+        {/* Featured badge */}
         {featured && (
           <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            className={`absolute top-3 left-3 bg-gradient-to-r ${colors.button} text-white px-3 py-1.5 rounded-full text-xs font-bold shadow-lg flex items-center gap-1`}
+            initial={{ scale: 0, rotate: -10 }}
+            animate={{ scale: 1, rotate: 0 }}
+            className={`absolute top-4 left-4 ${colors.accent} text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg flex items-center gap-2 backdrop-blur-sm`}
           >
-            <Star size={12} className="fill-current" />
+            <Sparkles size={14} className="animate-pulse" />
             Featured
           </motion.div>
         )}
 
-        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg hover:bg-white transition-colors"
-          >
-            <Heart size={16} className="text-pink-500" />
-          </motion.button>
+        {/* Rating badge */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1"
+        >
+          <Star size={12} className="fill-yellow-400 text-yellow-400" />
+          <span className="text-xs font-bold text-gray-800">{rating}</span>
+        </motion.div>
+
+        {/* Hover actions */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <motion.div initial={{ scale: 0 }} whileHover={{ scale: 1.1 }} className="flex gap-3">
+            <motion.button
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileTap={{ scale: 0.9 }}
+              className="bg-white/95 backdrop-blur-sm p-3 rounded-full shadow-xl hover:bg-white transition-colors"
+            >
+              <Heart size={18} className="text-red-500" />
+            </motion.button>
+          </motion.div>
         </div>
       </div>
 
-      <div className="p-6">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className={`text-xl font-bold ${colors.text}`}>{name}</h3>
-          <span className={`text-lg font-bold ${colors.text} bg-white/50 px-2 py-1 rounded-lg`}>{price}</span>
+      {/* Content section */}
+      <div className="p-6 space-y-4">
+        {/* Header */}
+        <div className="flex justify-between items-start">
+          <div className="flex-1">
+            <h3 className={`text-xl font-bold ${colors.text} mb-1 line-clamp-1`}>{name}</h3>
+            <div className="flex items-center gap-3 text-sm text-gray-600">
+              <div className="flex items-center gap-1">
+                <Clock size={14} />
+                <span>{prepTime}</span>
+              </div>
+            </div>
+          </div>
+          <div className="text-right">
+            <span className={`text-2xl font-bold ${colors.text} bg-white/70 px-3 py-1 rounded-xl shadow-sm`}>
+              {price}
+            </span>
+          </div>
         </div>
 
-        <p className="text-gray-600 mb-4 text-sm leading-relaxed line-clamp-2">{description}</p>
+        {/* Description */}
+        <p className="text-gray-700 text-sm leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
+          {description}
+        </p>
 
-        <div className="flex flex-wrap gap-2 mb-4">
-          {tags.map((tag, index) => (
+        {/* Tags */}
+        <div className="flex flex-wrap gap-2">
+          {tags.slice(0, 3).map((tag, index) => (
             <motion.span
               key={tag}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
-              className={`px-3 py-1 bg-white/70 ${colors.text} rounded-full text-xs font-medium border ${colors.border}`}
+              className={`px-3 py-1.5 bg-white/80 ${colors.text} rounded-full text-xs font-medium border ${colors.border} backdrop-blur-sm shadow-sm`}
             >
               {tag}
             </motion.span>
           ))}
+          {tags.length > 3 && (
+            <span className="px-3 py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">
+              +{tags.length - 3}
+            </span>
+          )}
         </div>
-
-        <motion.button
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-          className={`w-full bg-gradient-to-r ${colors.button} text-white font-semibold py-3 px-4 rounded-2xl shadow-lg transition-all duration-300 flex items-center justify-center gap-2`}
-        >
-          <Eye size={16} />
-          View Details
-        </motion.button>
       </div>
     </motion.div>
   )
 }
 
-// SectionTitle component
+// Enhanced SectionTitle component
 const SectionTitle = ({
   title,
   subtitle,
@@ -252,19 +438,19 @@ const SectionTitle = ({
   subtitle: string
 }) => {
   return (
-    <div className="text-center mb-12">
-      <motion.h2
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-5xl font-bold mb-4 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent"
-      >
-        {title}
-      </motion.h2>
+    <div className="text-center mb-16">
+      <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} className="relative">
+        <h1 className="text-6xl md:text-7xl font-black mb-6 bg-gradient-to-r from-pink-600 via-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent leading-tight">
+          {title}
+        </h1>
+        <div className="absolute -top-4 -right-4 text-4xl animate-bounce">✨</div>
+        <div className="absolute -top-2 -left-6 text-3xl animate-pulse">🍦</div>
+      </motion.div>
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.2 }}
-        className="text-gray-600 text-lg"
+        transition={{ delay: 0.3 }}
+        className="text-gray-600 text-xl max-w-2xl mx-auto leading-relaxed"
       >
         {subtitle}
       </motion.p>
@@ -285,68 +471,119 @@ const Flavors: React.FC = () => {
 
   return (
     <div className="pt-20">
-      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative overflow-hidden">
-        {/* Decorative background elements */}
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+        {/* Enhanced decorative background elements */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-pink-200/20 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 bg-purple-200/20 rounded-full blur-2xl animate-pulse delay-1000"></div>
-          <div className="absolute bottom-40 left-1/4 w-40 h-40 bg-blue-200/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
-          <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-green-200/20 rounded-full blur-2xl animate-pulse delay-500"></div>
-          <div className="absolute top-1/2 left-1/2 w-36 h-36 bg-yellow-200/20 rounded-full blur-3xl animate-pulse delay-1500"></div>
+          <motion.div
+            animate={{
+              x: [0, 100, 0],
+              y: [0, -50, 0],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+            className="absolute top-20 left-10 w-40 h-40 bg-gradient-to-r from-pink-200/30 to-rose-200/30 rounded-full blur-3xl"
+          />
+          <motion.div
+            animate={{
+              x: [0, -80, 0],
+              y: [0, 60, 0],
+              scale: [1, 0.8, 1],
+            }}
+            transition={{ duration: 25, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+            className="absolute top-40 right-20 w-32 h-32 bg-gradient-to-r from-purple-200/30 to-blue-200/30 rounded-full blur-2xl"
+          />
+          <motion.div
+            animate={{
+              x: [0, 60, 0],
+              y: [0, -80, 0],
+              rotate: [0, 180, 360],
+            }}
+            transition={{ duration: 30, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+            className="absolute bottom-40 left-1/4 w-48 h-48 bg-gradient-to-r from-blue-200/20 to-indigo-200/20 rounded-full blur-3xl"
+          />
+          <motion.div
+            animate={{
+              x: [0, -40, 0],
+              y: [0, 40, 0],
+              scale: [1, 1.3, 1],
+            }}
+            transition={{ duration: 18, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+            className="absolute bottom-20 right-1/3 w-36 h-36 bg-gradient-to-r from-green-200/25 to-emerald-200/25 rounded-full blur-2xl"
+          />
+          <motion.div
+            animate={{
+              x: [0, 120, 0],
+              y: [0, -100, 0],
+              rotate: [0, -180, -360],
+            }}
+            transition={{ duration: 35, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+            className="absolute top-1/2 left-1/2 w-44 h-44 bg-gradient-to-r from-yellow-200/20 to-orange-200/20 rounded-full blur-3xl"
+          />
         </div>
 
         <div className="container mx-auto px-4 py-12 relative z-10">
           <SectionTitle
-            title="Our Delicious Menu 🍦"
-            subtitle="Discover our mouth-watering selection of treats and delights"
+            title="Our Delicious Menu"
+            subtitle="Discover our mouth-watering selection of treats and delights crafted with love and the finest ingredients"
           />
 
-          {/* Category Filter */}
+          {/* Enhanced Category Filter */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
+            transition={{ delay: 0.4 }}
+            className="flex flex-wrap justify-center gap-4 mb-16"
           >
-            {categories.map((category, index) => (
-              <motion.button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 + index * 0.1 }}
-                className={`px-6 py-3 rounded-2xl text-sm font-semibold transition-all duration-300 shadow-lg ${
-                  selectedCategory === category
-                    ? "bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 text-white shadow-xl transform scale-105"
-                    : "bg-white/80 backdrop-blur-sm text-gray-700 hover:bg-white hover:shadow-xl border-2 border-white/50"
-                }`}
-              >
-                {category}
-                {category !== "All" && (
-                  <span className="ml-2 text-xs opacity-75">
-                    ({allFlavors.filter((f) => f.category === category).length})
-                  </span>
-                )}
-              </motion.button>
-            ))}
+            {categories.map((category, index) => {
+              const isSelected = selectedCategory === category
+              const colors = categoryColors[category as keyof typeof categoryColors] || categoryColors["Ice Cream"]
+
+              return (
+                <motion.button
+                  key={category}
+                  onClick={() => setSelectedCategory(category)}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                  className={`relative px-8 py-4 rounded-2xl text-sm font-bold transition-all duration-300 shadow-lg backdrop-blur-sm border-2 ${
+                    isSelected
+                      ? `bg-gradient-to-r ${colors.button} text-white shadow-2xl ${colors.glow} transform scale-105 border-white/50`
+                      : "bg-white/80 text-gray-700 hover:bg-white hover:shadow-xl border-white/50 hover:border-gray-200"
+                  }`}
+                >
+                  {category}
+                  {category !== "All" && (
+                    <span className="ml-2 text-xs opacity-75 bg-white/20 px-2 py-0.5 rounded-full">
+                      {allFlavors.filter((f) => f.category === category).length}
+                    </span>
+                  )}
+                  {isSelected && (
+                    <motion.div
+                      layoutId="activeCategory"
+                      className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent rounded-2xl"
+                    />
+                  )}
+                </motion.button>
+              )
+            })}
           </motion.div>
 
-          {/* Food Grid */}
+          {/* Enhanced Food Grid */}
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedCategory}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
             >
               {filteredFlavors.map((flavor, index) => (
                 <motion.div
                   key={flavor.id}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
@@ -356,47 +593,57 @@ const Flavors: React.FC = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Empty state */}
+          {/* Enhanced empty state */}
           {filteredFlavors.length === 0 && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="text-center py-16">
-              <div className="text-6xl mb-4">🍦</div>
-              <h3 className="text-2xl font-bold text-gray-600 mb-2">No items found</h3>
-              <p className="text-gray-500">Try selecting a different category</p>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="text-center py-20"
+            >
+              <div className="text-8xl mb-6 animate-bounce">🍦</div>
+              <h3 className="text-3xl font-bold text-gray-600 mb-4">No items found</h3>
+              <p className="text-gray-500 text-lg">
+                Try selecting a different category to explore more delicious options
+              </p>
             </motion.div>
           )}
 
-          {/* Stats section */}
+          {/* Enhanced stats section */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-16 bg-gradient-to-r from-white/80 via-pink-50/80 to-purple-50/80 backdrop-blur-sm rounded-3xl p-8 border-2 border-white/50 shadow-xl"
+            className="mt-20 bg-gradient-to-r from-white/90 via-pink-50/90 to-purple-50/90 backdrop-blur-xl rounded-3xl p-10 border-2 border-white/50 shadow-2xl"
           >
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
+              <motion.div whileHover={{ scale: 1.05 }} className="space-y-2">
+                <div className="text-4xl font-black bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
                   {allFlavors.length}
                 </div>
-                <div className="text-gray-600 font-medium">Menu Items</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
+                <div className="text-gray-600 font-semibold">Menu Items</div>
+                <Award className="w-6 h-6 mx-auto text-pink-500" />
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} className="space-y-2">
+                <div className="text-4xl font-black bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
                   {categories.length - 1}
                 </div>
-                <div className="text-gray-600 font-medium">Categories</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+                <div className="text-gray-600 font-semibold">Categories</div>
+                <Star className="w-6 h-6 mx-auto text-purple-500" />
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} className="space-y-2">
+                <div className="text-4xl font-black bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                   {allFlavors.filter((f) => f.featured).length}
                 </div>
-                <div className="text-gray-600 font-medium">Featured Items</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text text-transparent">
+                <div className="text-gray-600 font-semibold">Featured Items</div>
+                <Sparkles className="w-6 h-6 mx-auto text-green-500" />
+              </motion.div>
+              <motion.div whileHover={{ scale: 1.05 }} className="space-y-2">
+                <div className="text-4xl font-black bg-gradient-to-r from-orange-600 to-yellow-600 bg-clip-text text-transparent">
                   100%
                 </div>
-                <div className="text-gray-600 font-medium">Delicious</div>
-              </div>
+                <div className="text-gray-600 font-semibold">Delicious</div>
+                <Heart className="w-6 h-6 mx-auto text-orange-500" />
+              </motion.div>
             </div>
           </motion.div>
         </div>
