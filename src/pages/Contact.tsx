@@ -51,7 +51,7 @@ const ContactForm: React.FC = () => {
 
     try {
       await emailjs.send(
-        'service_qswklyf', // your EmailJS service ID
+        'service_qo5u7hr', // your EmailJS service ID
         'template_dgqe8dm', // your EmailJS template ID (updated)
         payload,
         'c2Aon5tlBwOTTIABk' // your EmailJS public key (updated)
