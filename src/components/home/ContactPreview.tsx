@@ -114,10 +114,10 @@ const ContactPreview: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-lg text-green-800 mb-1">Call Us</h3>
                     <a
-                      href="tel:+918688131949"
+                      href="tel:+918688433779"
                       className="text-gray-600 hover:text-green-600 transition-colors font-medium"
                     >
-                      +91 8688131949
+                      +91 8688433779
                     </a>
                   </div>
                 </motion.div>
@@ -135,10 +135,10 @@ const ContactPreview: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-lg text-blue-800 mb-1">Email Us</h3>
                     <a
-                      href="mailto:carniwallss@gmail.com"
+                      href="mailto:nallapanenimahidhar2004@gmail.com"
                       className="text-gray-600 hover:text-blue-600 transition-colors font-medium"
                     >
-                      carniwallss@gmail.com
+                      nallapanenimahidhar2004@gmail.com
                     </a>
                   </div>
                 </motion.div>

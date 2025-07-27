@@ -58,7 +58,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/carni_walls_ice_creams/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-400 transition-colors"
@@ -131,14 +131,14 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-primary-400 flex-shrink-0" />
-                <a href="tel:+91 8688131949" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  +91 8688131949
+                <a href="tel:+91 8688433779" className="text-gray-400 hover:text-primary-400 transition-colors">
+                  +91 8688433779
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-primary-400 flex-shrink-0" />
-                <a href="mailto:hello@carniwalls.com" className="text-gray-400 hover:text-primary-400 transition-colors">
-                  hello@carniwalls.com
+                <a href="mailto:nallapanenimahidhar2004@gmail.com" className="text-gray-400 hover:text-primary-400 transition-colors">
+                nallapanenimahidhar2004@gmail.com
                 </a>
               </li>
             </ul>

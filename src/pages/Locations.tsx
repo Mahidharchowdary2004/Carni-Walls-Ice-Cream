@@ -9,8 +9,8 @@ const location = {
   id: 1,
   name: "Get In Touch",
   address: "2-13-80, Servey No:411-A,411-B,2nd Ward Eastside of, National Highway Road, Kovur, Andhra Pradesh 524137",
-  phone: "+91 8688131949",
-  email: "carniwallss@gmail.com",
+  phone: "+91 8688433779",
+  email: "nallapanenimahidhar2004@gmail.com",
   hours: {
     monday: "9AM-9PM",
     tuesday: "9AM-9PM",
@@ -38,7 +38,7 @@ const location = {
     
   ],
   socialMedia: {
-    instagram: "https://instagram.com/sundaedreams",
+    instagram: "https://www.instagram.com/carni_walls_ice_creams/",
     facebook: "https://facebook.com/sundaedreams",
     twitter: "https://twitter.com/sundaedreams",
   },
