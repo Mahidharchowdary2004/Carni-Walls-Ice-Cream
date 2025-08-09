@@ -6,37 +6,53 @@ import FlavorCard from '../ui/FlavorCard';
 
 const featuredFlavors = [
   {
-    id: 1,
-    name: 'Dreamberry Delight',
-    description: 'Swirls of strawberry, blueberry, and raspberry in our signature cream base.',
-    imageUrl: 'https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg',
-    tags: ['Signature', 'Seasonal'],
-    featured: true
-  },
-  {
     id: 2,
-    name: 'Mint Chocolate Dream',
-    description: 'Cool mint infused with chunks of dark chocolate for a refreshing treat.',
-    imageUrl: 'https://images.pexels.com/photos/1739347/pexels-photo-1739347.jpeg',
-    tags: ['Bestseller', 'Gluten-Free'],
-    featured: true
+    name: "Chocolate Delight",
+    description: "Decadent chocolate ice cream loaded with rich chocolate chips and a deep cocoa flavor.",
+    imageUrl: "/Chacolate Delight.png",
+    tags: ["Ice Cream", "Chocolate", "Rich", "Dessert"],
+    featured: false,
+    category: "Ice Cream",
+    price: "₹300",
+    rating: 4.9,
+    prepTime: "5 min",
   },
   {
     id: 3,
-    name: 'Vanilla Cloud',
-    description: 'Our special vanilla bean ice cream whipped to cloud-like perfection.',
-    imageUrl: 'https://images.pexels.com/photos/1132558/pexels-photo-1132558.jpeg',
-    tags: ['Classic', 'Vegan'],
-    featured: false
+    name: "Pistachio Bliss",
+    description: "Nutty and creamy pistachio ice cream with crunchy pistachio bits for extra delight.",
+    imageUrl: "/Pista.png",
+    tags: ["Ice Cream", "Pistachio", "Nutty", "Premium"],
+    featured: true,
+    category: "Ice Cream",
+    price: "₹200",
+    rating: 4.7,
+    prepTime: "5 min",
   },
   {
     id: 4,
-    name: 'Salted Caramel Bliss',
-    description: 'Rich caramel with just the right touch of sea salt in every bite.',
-    imageUrl: 'https://images.pexels.com/photos/2846337/pexels-photo-2846337.jpeg',
-    tags: ['Customer Favorite', 'Gluten-Free'],
-    featured: false
-  }
+    name: "Strawberry Swirl",
+    description: "Fresh strawberry ice cream swirled with juicy strawberry chunks and a fruity aroma.",
+    imageUrl: "/Starayberry.png",
+    tags: ["Ice Cream", "Strawberry", "Fruity", "Dessert"],
+    featured: true,
+    category: "Ice Cream",
+    price: "₹200",
+    rating: 4.6,
+    prepTime: "5 min",
+  },
+  {
+    id: 5,
+    name: "Muskmelon Magic",
+    description: "Refreshing muskmelon-flavored ice cream that brings a cool tropical twist to your day.",
+    imageUrl: "/Muskmelon.png",
+    tags: ["Ice Cream", "Melon", "Fruity", "Summer Treat"],
+    featured: true,
+    category: "Ice Cream",
+    price: "₹300",
+    rating: 4.5,
+    prepTime: "5 min",
+  },
 ];
 
 const FeaturedFlavors: React.FC = () => {
