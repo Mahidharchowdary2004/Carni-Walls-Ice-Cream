@@ -114,10 +114,10 @@ const ContactPreview: React.FC = () => {
                   <div>
                     <h3 className="font-semibold text-lg text-green-800 mb-1">Call Us</h3>
                     <a
-                      href="tel:+918688433779"
+                      href="tel:+919440388942"
                       className="text-gray-600 hover:text-green-600 transition-colors font-medium"
                     >
-                      +91 8688433779
+                      +91 94403-88942
                     </a>
                   </div>
                 </motion.div>

@@ -9,7 +9,7 @@ const location = {
   id: 1,
   name: "Get In Touch",
   address: "2-13-80, Servey No:411-A,411-B,2nd Ward Eastside of, National Highway Road, Kovur, Andhra Pradesh 524137",
-  phone: "+91 8688433779",
+  phone: "+91 94403-88942",
   email: "nallapanenimahidhar2004@gmail.com",
   hours: {
     monday: "9AM-9PM",

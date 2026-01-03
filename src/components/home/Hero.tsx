@@ -17,7 +17,7 @@ const heroProducts = [
   {
     name: "BLUEBERRY",
     description: "TANGY, CREAMY, AND FILLED WITH BLUEBERRY GOODNESS",
-    image: "https://t3.ftcdn.net/jpg/10/75/24/08/360_F_1075240879_5VkzNNsaTaWOqqsKFts5rAugGQnK7JJM.jpg",
+    image: "/Blueberry.png",
     gradient: "from-[#cdb4db] via-[#a084ca] to-[#5e60ce]",         // soft purple → rich berry violet
     textGradient: "from-[#3c096c] to-[#240046]",                  // bold blueberry skin tones
     accentColor: "blueberry",
