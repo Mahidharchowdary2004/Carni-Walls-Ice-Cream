@@ -21,6 +21,7 @@ const location = {
     sunday: "9AM-9PM",
   },
   mapUrl: "https://maps.app.goo.gl/66o1gA7zL52KAMUh7",
+  reviewUrl: "https://g.page/r/CQ7w9Gf3Ms_7EAE/review",
   mapEmbed:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.3889314104144!2d79.98635697487111!3d14.519731885957112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4c8d6cd281ee91%3A0xfbcf32f767f4f00e!2sCarni%20walls%20ice%20creams!5e0!3m2!1sen!2sin!4v1745640515646!5m2!1sen!2sin",
   image:
@@ -35,7 +36,7 @@ const location = {
     "1.jpg",
     "2.jpg",
     "3.png"
-    
+
   ],
   socialMedia: {
     instagram: "https://www.instagram.com/carni_walls_ice_creams/",
@@ -292,6 +293,46 @@ const Locations: React.FC = () => {
                         <Twitter size={20} />
                         <span className="sr-only">Twitter</span>
                       </a>
+                    </div>
+                  </div>
+
+                  {/* Google Reviews Section */}
+                  <div className="p-4 bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl border border-green-200/50">
+                    <h4 className="font-semibold mb-3 text-green-800 flex items-center gap-2">
+                      <Star size={18} className="text-green-600 fill-green-600" />
+                      Love our Ice Cream?
+                    </h4>
+                    <div className="flex flex-col items-center gap-4">
+
+                      <div className="relative p-[4px] rounded-xl bg-gradient-to-br from-[#4285F4] via-[#EA4335] to-[#34A853] shadow-md group hover:shadow-lg transition-all duration-300">
+                        {/* Inner white container */}
+                        <div className="bg-white p-2 rounded-[10px] relative z-10">
+                          <img
+                            src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(location.reviewUrl)}`}
+                            alt="QR Code for Google Review"
+                            className="w-32 h-32"
+                          />
+                          {/* Center Google G logo (simulated with absolute div if image not available, or just keeping it clean) */}
+                        </div>
+
+                        {/* Decorative blur effect for the Google colors */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#4285F4] via-[#EA4335] to-[#34A853] rounded-xl blur-md opacity-30 -z-10 bg-[length:200%_200%] animate-gradient-xy"></div>
+                      </div>
+
+                      <div className="text-center">
+                        <p className="text-sm text-gray-600 mb-3">
+                          Scan the QR code or click below to leave us a 5-star review!
+                        </p>
+                        <a
+                          href={location.reviewUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center gap-2 w-full py-2.5 bg-white text-green-700 hover:bg-green-50 border border-green-200 rounded-xl font-medium transition-colors text-sm shadow-sm"
+                        >
+                          <Star size={16} className="fill-green-700" />
+                          Rate Us on Google
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>

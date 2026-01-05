@@ -1,44 +1,8 @@
-import { useState } from "react"
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, Phone, Instagram, Facebook, Twitter } from 'lucide-react'
+import { Mail, MapPin, Phone, Instagram, Facebook, Twitter, Star } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
-  const [status, setStatus] = useState("")
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    try {
-      // In a real Next.js app, you would use a Server Action here
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      })
-
-      if (response.ok) {
-        setStatus("Message sent successfully!")
-        setFormData({ name: "", email: "", subject: "", message: "" })
-      } else {
-        setStatus("Failed to send message. Please try again.")
-      }
-    } catch (error) {
-      setStatus("Error sending message. Please try again later.")
-    }
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
 
   return (
     <footer className="bg-gray-900 text-white py-6">
@@ -80,6 +44,17 @@ const Footer = () => {
                 className="text-gray-400 hover:text-primary-400 transition-colors"
               >
                 <Twitter size={18} />
+              </a>
+              <a
+                href="https://g.page/r/CQ7w9Gf3Ms_7EAE/review"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-primary-400 transition-colors"
+                title="Rate us on Google"
+              >
+                <div className="flex items-center gap-1">
+                  <Star size={18} />
+                </div>
               </a>
             </div>
           </div>
@@ -138,7 +113,7 @@ const Footer = () => {
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-primary-400 flex-shrink-0" />
                 <a href="mailto:nallapanenimahidhar2004@gmail.com" className="text-gray-400 hover:text-primary-400 transition-colors">
-                nallapanenimahidhar2004@gmail.com
+                  nallapanenimahidhar2004@gmail.com
                 </a>
               </li>
             </ul>
