@@ -9,17 +9,17 @@ const AboutPreview: React.FC = () => {
     {
       icon: <Leaf size={24} className="text-secondary-400" />,
       title: "Locally Sourced",
-      description: "We partner with local farmers to source the freshest, highest-quality ingredients for our ice cream."
+      description: "We partner with local farmers to source the freshest, highest-quality ingredients, ensuring purity and freshness in every bite."
     },
     {
       icon: <Star size={24} className="text-accent-300" />,
       title: "Crafted with Care",
-      description: "Each small batch is made with attention to detail, ensuring perfect texture and flavor in every scoop."
+      description: "Each small batch is made with close attention to detail, creating the perfect balance of texture, richness, and flavor."
     },
     {
       icon: <Heart size={24} className="text-primary-400" />,
       title: "Made with Love",
-      description: "Our passion for exceptional ice cream drives everything we do—you can taste the difference!"
+      description: "Our passion for exceptional ice cream drives everything we do. From preparation to presentation, you can truly taste the difference."
     }
   ];
 
@@ -37,7 +37,7 @@ const AboutPreview: React.FC = () => {
           >
             <div className="rounded-2xl overflow-hidden">
               <img 
-                src="https://images.pexels.com/photos/1415555/pexels-photo-1415555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
+                src="/preparation.png" 
                 alt="Ice cream preparation" 
                 className="w-full h-full object-cover"
               />
@@ -58,7 +58,7 @@ const AboutPreview: React.FC = () => {
           >
             <SectionTitle 
               title="Our Sweet Story" 
-              subtitle="Founded in 2018, Carni Walls was born from a simple belief: ice cream should be an extraordinary experience, not just a dessert."
+              subtitle="Founded in 2022, Carni Walls was born from a simple belief — ice cream should be an extraordinary experience, not just a dessert. Every scoop is crafted to bring joy, comfort, and unforgettable flavor."
             />
             
             <div className="space-y-6 mb-8">
