@@ -2,11 +2,8 @@ import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { Send } from "lucide-react"
 import SectionTitle from '../components/ui/SectionTitle';
-import emailjs from '@emailjs/browser';
-import ReactDOMServer from 'react-dom/server';
-import EmailTemplate from "../components/ui/EmailTemplate";
 
-const COMPANY_PHONE = "+91 8688131949";
+
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -50,12 +47,18 @@ const ContactForm: React.FC = () => {
     }
 
     try {
-      await emailjs.send(
-        'service_qo5u7hr', // your EmailJS service ID
-        'template_dgqe8dm', // your EmailJS template ID (updated)
-        payload,
-        'c2Aon5tlBwOTTIABk' // your EmailJS public key (updated)
-      );
+      const response = await fetch('https://carni-walls-ice-cream.onrender.com/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       setStatus({
         type: "success",
         message: "Message sent successfully! We will get back to you soon.",
