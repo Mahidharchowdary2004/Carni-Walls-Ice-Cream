@@ -17,7 +17,7 @@ const DEFAULT_DESCRIPTION =
   'Carni Walls Ice Cream - Premium handcrafted ice cream in Kovur, Andhra Pradesh. Explore unique flavors, natural ingredients, and a delightful ice cream experience!';
 const DEFAULT_IMAGE = '/Logo.png';
 const DEFAULT_KEYWORDS =
-  'Carni Walls, ice cream, Kovur, Andhra Pradesh, handcrafted ice cream, natural ingredients, premium dessert, best ice cream, ice cream shop';
+  'Carni Walls, carniwalls, carni-walls, carni walls ice cream, carniwalls.in, carniwalls, karni walls, carne walls, karne walls, ice cream, Kovur, Andhra Pradesh, handcrafted ice cream, natural ingredients, premium dessert, best ice cream, ice cream shop, ice cream parlor, dessert shop, milkshakes, sundae';
 
 const SEO: React.FC<SEOProps> = ({
   title,
