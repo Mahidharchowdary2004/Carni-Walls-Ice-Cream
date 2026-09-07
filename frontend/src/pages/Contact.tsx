@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { motion } from "framer-motion"
 import { Send } from "lucide-react"
 import SectionTitle from '../components/ui/SectionTitle';
+import SEO from '../components/utils/SEO';
 
 
 
@@ -74,6 +75,13 @@ const ContactForm: React.FC = () => {
 
   return (
     <div className="pt-32 min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Carni Walls Ice Cream. Have a question, suggestion, or want to book an event? We'd love to hear from you!"
+        url="/contact"
+        keywords="contact Carni Walls, ice cream enquiry, Kovur ice cream, catering, events"
+      />
+
       {/* Hero Section with Ice Cream Gradient */}
       <div className="bg-gradient-to-r from-pink-200 via-purple-200 to-indigo-200 py-20 pt-32 relative overflow-hidden">
         {/* Decorative circles for ice cream scoops effect */}

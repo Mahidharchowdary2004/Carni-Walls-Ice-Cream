@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../components/ui/SectionTitle';
+import SEO from '../components/utils/SEO';
 import { Heart, Leaf, Award, Users } from 'lucide-react';
 
 const About: React.FC = () => {
@@ -10,6 +11,11 @@ const About: React.FC = () => {
 
   return (
     <>
+      <SEO
+        title="About Us"
+        description="Learn the story behind Carni Walls Ice Cream — our passion for handcrafted flavors, natural ingredients, and bringing joy to every scoop in Kovur, Andhra Pradesh."
+        url="/about"
+      />
       <div className="bg-primary-400 py-20 pt-32">
         <div className="container-custom">
           <motion.h1 

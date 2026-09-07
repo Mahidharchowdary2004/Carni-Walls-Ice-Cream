@@ -2,6 +2,7 @@ import type React from "react"
 import { useState, useMemo } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Star, Heart, Clock, Award, Sparkles } from "lucide-react"
+import SEO from "../components/utils/SEO"
 
 // Food items data
 const allFlavors = [
@@ -485,6 +486,12 @@ const Flavors: React.FC = () => {
 
   return (
     <div className="pt-20">
+      <SEO
+        title="Our Flavors"
+        description="Explore our full menu of handcrafted ice creams, pizzas, burgers, chicken, and milkshakes. Find your favorite Carni Walls flavor today!"
+        url="/flavors"
+        keywords="ice cream flavors, Carni Walls menu, milkshakes, sundae, handcrafted ice cream, pizza, burger"
+      />
       <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 via-blue-50 to-indigo-50 relative overflow-hidden">
         {/* Enhanced decorative background elements */}
         <div className="fixed inset-0 overflow-hidden pointer-events-none">

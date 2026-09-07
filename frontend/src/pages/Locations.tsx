@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { motion } from "framer-motion"
 import { MapPin, Phone, Mail, Clock, ExternalLink, Instagram, Facebook, Twitter, Star, Heart } from "lucide-react"
 import { Link } from "react-router-dom"
+import SEO from "../components/utils/SEO"
 
 // Single location data
 const location = {
@@ -72,6 +73,12 @@ const Locations: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
+      <SEO
+        title="Visit Us"
+        description="Find Carni Walls Ice Cream shop in Kovur, Andhra Pradesh. Get directions, opening hours, phone number, and contact information."
+        url="/locations"
+        keywords="Carni Walls location, Kovur ice cream shop, Andhra Pradesh, ice cream near me, visit us"
+      />
       {/* Decorative background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-32 h-32 bg-pink-200/20 rounded-full blur-3xl animate-pulse"></div>

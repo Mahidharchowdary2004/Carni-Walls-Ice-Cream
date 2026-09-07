@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../components/ui/SectionTitle';
+import SEO from '../components/utils/SEO';
 import { Check, Plus, Minus, ShoppingBag } from 'lucide-react';
 
 const Order: React.FC = () => {
@@ -10,6 +11,12 @@ const Order: React.FC = () => {
 
   return (
     <div className="pt-32">
+      <SEO
+        title="Order Online"
+        description="Build your perfect ice cream box from Carni Walls. Choose your favorite flavors, toppings, and get it delivered to your door in insulated packaging."
+        url="/order"
+        keywords="order ice cream online, ice cream delivery, Carni Walls order, build your box"
+      />
       <div className="bg-secondary-400 py-20 pt-32">
         <div className="container-custom">
           <motion.h1 
